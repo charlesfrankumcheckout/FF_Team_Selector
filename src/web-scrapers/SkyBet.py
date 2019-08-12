@@ -61,10 +61,8 @@ def clean_table(df):
             days_from = game_day - current_day
         match_date = today + timedelta(days = days_from)
         # if the datetime value is smaller than last, add one week
-        if row[0] > 0 and match_date < max(date_time):
+        while row[0] > 0 and match_date < max(date_time):
             match_date = match_date + timedelta(weeks = 1)
-            while match_date < max(date_time):
-                match_date = match_date + timedelta(weeks = 1)
         # Store values in a list
         date_time.append(match_date)
     # Add datetime as a dataframe column
