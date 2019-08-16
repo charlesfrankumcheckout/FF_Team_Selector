@@ -50,13 +50,7 @@ def save_csv(data):
     data.to_csv(path, index=0, sep=',')
 
 
-
-if __name__ == '__main__':
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome('chromedriver.exe', chrome_options=options)
-
+def get_fixtures():
     fixtures_url = 'https://fantasy.premierleague.com/fixtures/'
     fixtures = get_fixture_data(fixtures_url)
     save_csv(fixtures)
