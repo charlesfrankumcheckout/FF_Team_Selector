@@ -6,11 +6,6 @@ from time import sleep
 
 import pandas as pd
 
-from tqdm import tqdm
-
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-
 
 
 def get_fixture_data(url):
@@ -21,7 +16,7 @@ def get_fixture_data(url):
     gameweeks = []
     
     gw_counter = 0
-    for i in tqdm(range(1,39)):
+    for i in range(1,39):
         gw_counter += 1
         week = url+str(i)
         driver.get(week)
